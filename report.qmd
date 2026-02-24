@@ -2,15 +2,31 @@
 title: "Report"
 author: "Oscar Plaisant, Anthony Saab"
 
-execute:
+#format:
+#  html:
+#    output-file: report.html
+
+execute: 
   eval: true
   echo: false
+  collapse: false
+  cache: false
+  daemon: true
+
+# engine: knitr
+engine: jupyter
 ---
 
+
+
 # Introduction and motivation
+
+
 
 # Results
 
 # Appendix
+
+{{< embed report.ipynb echo=true eval=false >}}
 
 
