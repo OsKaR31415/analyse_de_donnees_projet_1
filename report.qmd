@@ -1,6 +1,6 @@
 ---
 title: "Report"
-author: "Oscar Plaisant, Anthony Saab"
+author: "Plaisant Oscar, Saab Anthony, Tersi Yousra"
 
 #format:
 #  html:
@@ -22,10 +22,21 @@ engine: jupyter
 # Introduction and motivation
 
 
-
 # Results
 
 # Appendix
+
+## Setting up the environment
+In order to run this project, you have to initialize a virtual environment and to install required packages. It can be done this way :
+
+```{sh}
+python3 -m venv env
+source env/bin/activate
+pip3 install -r requirements.txt
+```
+
+## The code
+The following code has been used to generate the graphics in this report.
 
 {{< embed report.ipynb echo=true eval=false >}}
 
