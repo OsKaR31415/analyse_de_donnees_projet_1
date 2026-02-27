@@ -1,5 +1,24 @@
 project:
   title: "hmw_1_data_analysis"
 
+  pre-render: pre-render.py
 
 
+navbar:
+  search: false
+
+format:
+  html:
+    theme: lux
+
+execute: 
+  #eval: true
+  #echo: false
+  collapse: false
+  cache: true  # cache the notebook, requires jupyter-cache
+  daemon: true  # don't restart the kenel at each render
+
+
+engine: jupyter
+
+license: CC BY-NC
