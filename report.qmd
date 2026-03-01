@@ -1,20 +1,34 @@
 ---
 title: "Report"
-author: "Plaisant Oscar, Saab Anthony, Tersi Yousra"
+authors:
+  - name: "Oscar Plaisant"
+    note: "22500288"
+    url: "https://osk42.quarto.pub"
+    email: "oscar.plaisant@etu.u-paris.fr"
+  - name: "Anthony Saab"
+  - name: "Yousra Tersi"
+
+date: 2026-03-07
+
+execute: 
+  enabled: false
+  eval: true
+  echo: false
+  cache: false
+
+toc: true
+notebook-links: global # global: show with toc, inline: show with code
+
+notebook-view:
+  - notebook: report.ipynb
+    title: "report code title"
 
 #format:
 #  html:
 #    output-file: report.html
 
-execute: 
-  eval: true
-  echo: false
-  collapse: false
-  cache: false
-  daemon: true
 
-# engine: knitr
-engine: jupyter
+# abstract: petit résumé
 ---
 
 
@@ -23,6 +37,9 @@ engine: jupyter
 
 
 # Results
+
+{{< embed report.ipynb#tables >}}
+
 
 # Appendix
 
@@ -35,9 +52,12 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-## The code
-The following code has been used to generate the graphics in this report.
 
-{{< embed report.ipynb echo=true eval=false >}}
+## The code
+You can reproduce graphics from this report using this code
+
+```python
+{{< include report.py >}}
+```
 
 
