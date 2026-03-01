@@ -4,9 +4,6 @@ project:
   pre-render: pre-render.py
 
 
-navbar:
-  search: false
-
 format:
   html:
     theme: lux
