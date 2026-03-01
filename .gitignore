@@ -9,5 +9,7 @@
 .ipynb_checkpoints/
 .jupyter_cache/
 
+report_files/
+report.out.ipynb
 report.py
 
