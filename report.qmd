@@ -21,7 +21,7 @@ notebook-links: global # global: show with toc, inline: show with code
 
 notebook-view:
   - notebook: report.ipynb
-    title: "report code title"
+    title: "report code as a notebook"
 
 #format:
 #  html:
