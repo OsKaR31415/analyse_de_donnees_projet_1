@@ -1,10 +1,13 @@
 
-all: report
+all: report report.ipynb
 
-report.ipynb:  # update report.py to contents of 
+.PHONY: report.py
+
+report.py:  # update report.py according to contents of report.ipynb
 	jupyter nbconvert --to python --no-prompt report.ipynb
 
-report: report.ipynb
-	touch report.py  # make shure this file exists
+report: report.py
 	quarto render report.qmd
 	echo "\007"  # ring bell at end of rendering
+
+
