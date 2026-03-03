@@ -1,8 +1,6 @@
 project:
   title: "hmw_1_data_analysis"
 
-  pre-render: pre-render.py
-
 
 format:
   html:
@@ -11,7 +9,6 @@ format:
     ipynb-ouput: all  # compute all cells when rendering a notebook
 
 render: # which files to render
-  - report.ipynb
   - report.qmd
 
 
