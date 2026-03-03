@@ -10,7 +10,7 @@ Pour générer le fichier html contenant le rapport, lancer `quarto render repor
      - **Attention :** ne pas modifier le fichier `report.py`, qui est auto-généré (et donc écrasé) à chaque render
  - `_quarto.yml` est un fichier de configuration (pour le rendu et l'affichage du rapport)
  - En relation avec le code :
-     - le dossier `DATA/` contient les données (au format CSV) utilisées dans le projet
+     - le dossier `_data/` contient les données (au format CSV) utilisées dans le projet
      - `requirements.txt` contient la liste des modules python nécessaires pour exécuter le projet
  - Fichiers de rendu (non synchronisés par git) (générés automatiquement)
      - `report.html` contient le rapport
@@ -22,7 +22,7 @@ Pour générer le fichier html contenant le rapport, lancer `quarto render repor
 En résumé :
  - pour éditer le rapport : `report.qmd`
  - pour éditer le code : `report.ipynb`
- - les données sont dans le dossier `DATA/`
+ - les données sont dans le dossier `_data/`
  - `_quarto.yml` pour la configuration
  - `requirements.txt` pour les modules python
  - le résultat est dans `report.html`
