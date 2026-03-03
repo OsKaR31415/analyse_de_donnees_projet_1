@@ -7,6 +7,15 @@ project:
 format:
   html:
     theme: lux
+  ipynb:
+    ipynb-ouput: all  # compute all cells when rendering a notebook
+
+render: # which files to render
+  - report.ipynb
+  - report.qmd
+
+
+# output-dir: "outdir"
 
 execute: 
   #eval: true
@@ -16,6 +25,8 @@ execute:
   daemon: true  # don't restart the kenel at each render
 
 
+
 engine: jupyter
 
 license: CC BY-NC
+
