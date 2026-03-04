@@ -36,7 +36,7 @@ To answer a very important question regarding the relationship between gender wa
 
 # Results
 
-{{< embed report.ipynb#tables >}}
+{{< embed report.ipynb#raw-data-tables >}}
 
 A comparison of the time-series animated mapping of the Gender Wage Gap vs. GDP per Hour Worked to the scatter plot (from 2022) illustrates many patterns that call into question an assumption of economic development resolving inequality.
 One of the first observations that comes out of looking at the data is the significant heterogeneity present in the data -- there is no direct linear correlation in how economically productive each country is and how equitable they distribute income between genders. For example, although South Korea (KOR) has an extremely high level of productivity (\$53 USD PPP/hour), it has the largest gap in the data set at over 31%, while the large productivity European countries, Belgium (BEL) have gaps that range just under 1%. Also, of interest is the case of Luxembourg (LUX) with the highest productivity level in the data (\$126 USD PPP/hour), and the lowest (negative) gap (-8.6%) showing that the average wage of women is higher than the average wage of men.
