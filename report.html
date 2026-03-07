@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-03-07">
+
+<title>Report</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="report_files/libs/quarto-html/popper.min.js"></script>
+<script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="report_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="report_files/libs/bootstrap/bootstrap-727ba3f8b3a87315a43d9d8950494688.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-and-motivation" id="toc-introduction-and-motivation" class="nav-link active" data-scroll-target="#introduction-and-motivation">Introduction and motivation</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
+  <ul class="collapse">
+  <li><a href="#setting-up-the-environment" id="toc-setting-up-the-environment" class="nav-link" data-scroll-target="#setting-up-the-environment">Setting up the environment</a></li>
+  <li><a href="#the-code" id="toc-the-code" class="nav-link" data-scroll-target="#the-code">The code</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="report-preview.html"><i class="bi bi-journal-code"></i>report code as a notebook</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Report</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://osk42.quarto.pub">Oscar Plaisant</a> <a href="mailto:oscar.plaisant@etu.u-paris.fr" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+             <p><a href="https://sites.google.com/view/saabism/portfolio">Anthony Saab</a> <a href="mailto:anthony.saab@etu.u-paris.fr" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+             <p>Yousra Tersi <a href="mailto:yousra.tersi@etu.u-paris.fr" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 7, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-and-motivation" class="level1">
+<h1>Introduction and motivation</h1>
+<p>This study has utilized two independent data sets, the first represents national productivity through GDP per Hour Worked (GDPHRS) in U.S. Dollars using Purchasing Power Parity (PPP). The second measures the gender wage gap through the difference between the median wages earned by males and females, expressed as a percentage of the median earnings of males. These are important indicators of societal inequities and are significant because they represent large-scale social issues. In selecting the GDP per Hour Worked (GDPHRS), we were motivated to select a precision measure of labor efficiency. In contrast to GDP per capita (which divides the total amount of goods produced and services provided by the entire population) GDP per hour worked measures the exact amount of goods and services produced per hour of work. We chose to use USD Purchasing Power Parity (PPP) to account for differences in the cost of living and inflation rates so that a given unit of output produced in Colombia can be compared to a similar unit produced in Luxembourg in terms of its ability to purchase goods and services. The gender wage gap is defined as the difference between the median wage earned by males and females divided by the median wage earned by males and then multiplied by 100. This is a key macro indicator of inequality; however, this metric is unadjusted and does not consider the potential differences in occupations, education, or hours worked between genders. Therefore, it primarily addresses structural and systemic differences in earning potential based upon gender within the larger economy. A positive number means males earn more than females, while a negative number means females earn more than males. To answer a very important question regarding the relationship between gender wage disparity and national productivity, we plan to graph the gender wage gap against GDP per Hour Worked. Through this graphical analysis, we hope to determine if there is a correlation between high national economic productivity and reduced gender wage disparities. Additionally, we will examine whether highly productive advanced economies automatically reduce gender-based earning disparities or if the gender wage gap exists regardless of the wealth-generating capability of the economy. And to further investigate the nuances of this relationship, we also categorized the 2022 data into three equal groups based upon their national productivity (Lower-Third, Middle-Third, and Top-Third GDP per Hour Worked). A box-and-whisker plot overlaid with individual data points was created to analyze the distribution, median, and variance of the Gender Wage Gap within each of these distinct economic categories. This graphical analysis provides a different perspective by focusing on the concentration and spread of the wage disparities across distinct levels of economic efficiency, rather than a continuous trend line.</p>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Raw - by gender wage gap</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Raw - by GDP</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="quarto-embed-nb-cell">
+<div id="cell-plot-gender-wage-gap-vs-gdppop" class="cell" data-execution_count="24">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/report-plot-gender-wage-gap-vs-gdppop-output-1.png" id="plot-gender-wage-gap-vs-gdppop" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="quarto-embed-nb-cell">
+<div id="cell-raw-ordby-gwg" class="cell" data-execution_count="7">
+<div id="raw-ordby-gwg" class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">REF_AREA</th>
+<th data-quarto-table-cell-role="th">GENDER_WAGE_GAP</th>
+<th data-quarto-table-cell-role="th">PROD_VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1466</th>
+<td>LUX</td>
+<td>-8.677098</td>
+<td>142906.120618</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2422</th>
+<td>BGR</td>
+<td>0.565771</td>
+<td>35816.765472</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">210</th>
+<td>BEL</td>
+<td>0.906909</td>
+<td>68157.888135</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">534</th>
+<td>CRI</td>
+<td>1.449275</td>
+<td>25280.141522</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">438</th>
+<td>COL</td>
+<td>1.858736</td>
+<td>21205.096969</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1435</th>
+<td>LTU</td>
+<td>4.402102</td>
+<td>50498.392097</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1697</th>
+<td>NOR</td>
+<td>4.481459</td>
+<td>123153.044347</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1192</th>
+<td>ITA</td>
+<td>4.563233</td>
+<td>56247.389657</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2453</th>
+<td>HRV</td>
+<td>5.096074</td>
+<td>41291.868834</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">861</th>
+<td>FRA</td>
+<td>5.346154</td>
+<td>56041.932578</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1974</th>
+<td>ESP</td>
+<td>5.707317</td>
+<td>50473.083496</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">708</th>
+<td>DNK</td>
+<td>5.837089</td>
+<td>77004.025813</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1627</th>
+<td>NZL</td>
+<td>6.255865</td>
+<td>53774.509696</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2050</th>
+<td>SWE</td>
+<td>7.042254</td>
+<td>65571.811875</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1925</th>
+<td>SVN</td>
+<td>7.920792</td>
+<td>51144.145259</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1107</th>
+<td>IRL</td>
+<td>8.268872</td>
+<td>136390.205791</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">973</th>
+<td>GRC</td>
+<td>8.597285</td>
+<td>38444.871594</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1811</th>
+<td>PRT</td>
+<td>9.606987</td>
+<td>44410.272972</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1537</th>
+<td>NLD</td>
+<td>9.779431</td>
+<td>77152.118920</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">39</th>
+<td>AUS</td>
+<td>9.875000</td>
+<td>72576.307067</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1773</th>
+<td>POL</td>
+<td>10.170975</td>
+<td>44909.622272</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1082</th>
+<td>ISL</td>
+<td>10.192418</td>
+<td>77110.840313</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2353</th>
+<td>OECD</td>
+<td>11.061497</td>
+<td>56519.937194</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2145</th>
+<td>CHE</td>
+<td>12.067100</td>
+<td>91271.601303</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">122</th>
+<td>AUT</td>
+<td>12.143697</td>
+<td>70648.789357</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1052</th>
+<td>HUN</td>
+<td>13.335556</td>
+<td>44012.267683</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">603</th>
+<td>CZE</td>
+<td>13.575712</td>
+<td>51289.764465</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2519</th>
+<td>ROU</td>
+<td>13.636025</td>
+<td>44292.125784</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1899</th>
+<td>SVK</td>
+<td>13.808195</td>
+<td>40904.584113</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2190</th>
+<td>GBR</td>
+<td>13.978337</td>
+<td>58544.455698</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">940</th>
+<td>DEU</td>
+<td>14.380132</td>
+<td>67589.787429</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">362</th>
+<td>CHL</td>
+<td>15.367050</td>
+<td>30392.089684</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1507</th>
+<td>MEX</td>
+<td>16.666667</td>
+<td>23385.373590</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2298</th>
+<td>USA</td>
+<td>16.984402</td>
+<td>77778.321749</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">255</th>
+<td>CAN</td>
+<td>17.142857</td>
+<td>63578.297724</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">812</th>
+<td>FIN</td>
+<td>17.516859</td>
+<td>61338.359877</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1397</th>
+<td>LVA</td>
+<td>19.552239</td>
+<td>39815.851767</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1187</th>
+<td>ISR</td>
+<td>20.846154</td>
+<td>53025.413972</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1268</th>
+<td>JPN</td>
+<td>21.347942</td>
+<td>47463.355255</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">736</th>
+<td>EST</td>
+<td>21.424597</td>
+<td>48413.797609</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1352</th>
+<td>KOR</td>
+<td>31.242084</td>
+<td>55070.379870</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="quarto-embed-nb-cell">
+<div id="cell-raw-gwgvsgdppop-ordby-gdppop" class="cell" data-execution_count="8">
+<div id="raw-gwgvsgdppop-ordby-gdppop" class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">REF_AREA</th>
+<th data-quarto-table-cell-role="th">GENDER_WAGE_GAP</th>
+<th data-quarto-table-cell-role="th">PROD_VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">438</th>
+<td>COL</td>
+<td>1.858736</td>
+<td>21205.096969</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1507</th>
+<td>MEX</td>
+<td>16.666667</td>
+<td>23385.373590</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">534</th>
+<td>CRI</td>
+<td>1.449275</td>
+<td>25280.141522</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">362</th>
+<td>CHL</td>
+<td>15.367050</td>
+<td>30392.089684</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2422</th>
+<td>BGR</td>
+<td>0.565771</td>
+<td>35816.765472</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">973</th>
+<td>GRC</td>
+<td>8.597285</td>
+<td>38444.871594</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1397</th>
+<td>LVA</td>
+<td>19.552239</td>
+<td>39815.851767</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1899</th>
+<td>SVK</td>
+<td>13.808195</td>
+<td>40904.584113</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2453</th>
+<td>HRV</td>
+<td>5.096074</td>
+<td>41291.868834</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1052</th>
+<td>HUN</td>
+<td>13.335556</td>
+<td>44012.267683</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2519</th>
+<td>ROU</td>
+<td>13.636025</td>
+<td>44292.125784</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1811</th>
+<td>PRT</td>
+<td>9.606987</td>
+<td>44410.272972</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1773</th>
+<td>POL</td>
+<td>10.170975</td>
+<td>44909.622272</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1268</th>
+<td>JPN</td>
+<td>21.347942</td>
+<td>47463.355255</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">736</th>
+<td>EST</td>
+<td>21.424597</td>
+<td>48413.797609</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1974</th>
+<td>ESP</td>
+<td>5.707317</td>
+<td>50473.083496</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1435</th>
+<td>LTU</td>
+<td>4.402102</td>
+<td>50498.392097</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1925</th>
+<td>SVN</td>
+<td>7.920792</td>
+<td>51144.145259</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">603</th>
+<td>CZE</td>
+<td>13.575712</td>
+<td>51289.764465</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1187</th>
+<td>ISR</td>
+<td>20.846154</td>
+<td>53025.413972</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1627</th>
+<td>NZL</td>
+<td>6.255865</td>
+<td>53774.509696</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1352</th>
+<td>KOR</td>
+<td>31.242084</td>
+<td>55070.379870</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">861</th>
+<td>FRA</td>
+<td>5.346154</td>
+<td>56041.932578</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1192</th>
+<td>ITA</td>
+<td>4.563233</td>
+<td>56247.389657</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2353</th>
+<td>OECD</td>
+<td>11.061497</td>
+<td>56519.937194</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2190</th>
+<td>GBR</td>
+<td>13.978337</td>
+<td>58544.455698</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">812</th>
+<td>FIN</td>
+<td>17.516859</td>
+<td>61338.359877</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">255</th>
+<td>CAN</td>
+<td>17.142857</td>
+<td>63578.297724</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2050</th>
+<td>SWE</td>
+<td>7.042254</td>
+<td>65571.811875</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">940</th>
+<td>DEU</td>
+<td>14.380132</td>
+<td>67589.787429</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">210</th>
+<td>BEL</td>
+<td>0.906909</td>
+<td>68157.888135</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">122</th>
+<td>AUT</td>
+<td>12.143697</td>
+<td>70648.789357</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">39</th>
+<td>AUS</td>
+<td>9.875000</td>
+<td>72576.307067</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">708</th>
+<td>DNK</td>
+<td>5.837089</td>
+<td>77004.025813</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1082</th>
+<td>ISL</td>
+<td>10.192418</td>
+<td>77110.840313</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1537</th>
+<td>NLD</td>
+<td>9.779431</td>
+<td>77152.118920</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2298</th>
+<td>USA</td>
+<td>16.984402</td>
+<td>77778.321749</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2145</th>
+<td>CHE</td>
+<td>12.067100</td>
+<td>91271.601303</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1697</th>
+<td>NOR</td>
+<td>4.481459</td>
+<td>123153.044347</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1107</th>
+<td>IRL</td>
+<td>8.268872</td>
+<td>136390.205791</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1466</th>
+<td>LUX</td>
+<td>-8.677098</td>
+<td>142906.120618</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell">
+<div id="cell-gwg-by-gdphrs" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/report-gwg-by-gdphrs-output-1.png" id="gwg-by-gdphrs" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>A comparison of the time-series animated mapping of the Gender Wage Gap vs.&nbsp;GDP per Hour Worked to the categorical boxplot illustrates many patterns that call into question an assumption of economic development resolving inequality. One of the first observations that comes out of looking at the data is the significant heterogeneity present across both visualizations. For the scatter plot, there is no direct linear correlation between how economically productive each country is and how equitably they distribute income between genders. For example, although South Korea (KOR) has an extremely high level of productivity ($53 USD PPP/hour), it has the largest gap in the dataset at over 31%, while high-productivity European countries like Belgium (BEL) have gaps that range just under 1%. While the scatter plot shows this lack of linear correlation, the boxplot reveals that this variance is heavily concentrated in the lower-third productivity tier. In this group, there is a spread containing both that big South Korean gap and near-perfect parity in countries like Bulgaria (BGR) at 0.5%. Both graphs highlight the unique case of Luxembourg (LUX), which boasts the highest productivity level ($126 USD PPP/hour) and the dataset’s only negative wage gap (-8.6%), showing that the average wage of women is higher than the average wage of men. However, as we look across the boxplot to the top-third productivity group, we see a visibly lower median wage gap (9.0% compared to the lower-third’s 11.7%) and a tighter distribution, with no top-tier country exceeding a 17.5% gap. These findings raise important questions about the data. From the scatter plot’s perspective, why do countries with lower levels of productivity, i.e., Colombia (COL) and Costa Rica (CRI), show very small gaps (less than 2%)? Is the wage gap reflecting a true difference in the treatment of women and men in the workplace, or is it simply that neither gender has access to high-paying jobs, making the wage distribution so flat that everyone makes the same amount of money regardless of gender? Conversely, looking at the boxplot;does reaching the highest echelon of national productivity serve as a systemic “ceiling” that naturally restricts extreme wage disparities? Is the wide variance in the lower-third reflecting the chaotic transition periods of developing economies, while the tightly clustered middle and top tiers imply that advanced economies have adopted similar, standardized labor policies? Furthermore, the large gaps (&gt;20%) in highly productive countries like Japan (JPN) and Israel (ISR) on the scatter plot, combined with the stubborn baseline of inequality (around 9-12%) in the top-tier boxplot, indicate that there may be some deep-rooted cultural beliefs, occupational separation, or a shared “motherhood penalty” that creates barriers to equal opportunity that even extreme wealth cannot erase. The most important thing to remember when using this data to make conclusions is to avoid making causal statements about the relationships shown in the graphs. Neither the scatter plot nor the boxplot indicates that an increase in a country’s Gross Domestic Product (GDP) per hour worked, or moving a country from the lower-third into the top-third of productivity, causes the gender wage gap to magically shrink or grow. They show that a country’s ability to produce goods and services, and the dispersion of its wage inequality, look very different depending on the macroeconomic tier, but the two remain separate issues. They are interrelated through many factors, including but not limited to, the country’s legislative policies, childcare availability, and deep-rooted social norms/history. The data, and only the data, suggests that while the highest productivity tier exhibits a moderately lower median wage gap and fewer extreme outliers, generating wealth is not sufficient to guarantee equal pay for equal work.</p>
+</section>
+<section id="appendix" class="level1">
+<h1>Appendix</h1>
+<section id="setting-up-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-environment">Setting up the environment</h2>
+<p>In order to run this project, you have to initialize a virtual environment and to install required packages. It can be done this way :</p>
+<pre class="{sh}"><code>python3 -m venv env
+source env/bin/activate
+pip3 install -r requirements.txt</code></pre>
+</section>
+<section id="the-code" class="level2">
+<h2 class="anchored" data-anchor-id="the-code">The code</h2>
+<p>You can reproduce graphics from this report using this code</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env python</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># coding: utf-8</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># # Imports</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: imports</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os.path</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># # Fetch data</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ## data-loading functions</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_from_url(url: <span class="bu">str</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                 filename: <span class="bu">str</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                 verbose: <span class="bu">bool</span> <span class="op">=</span><span class="va">False</span>, <span class="op">**</span>_) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Read, write locally, and parse with pandas a remote csv from its url.</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">        url (str): The data's url.</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">        filename (str): The filename where the data will be written. Should be a .csv file.</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">        pd.DataFrame: The data inside a dataframe.</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># headers = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0"}</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> verbose:</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"fetching"</span>, url, <span class="st">"..."</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> requests.get(url, stream<span class="op">=</span><span class="va">True</span>) <span class="im">as</span> response:</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        response.raise_for_status()</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(filename, <span class="st">"wb"</span>) <span class="im">as</span> csv:</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> chunk <span class="kw">in</span> response.iter_content(<span class="dv">4096</span>):</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>                csv.write(chunk)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        df <span class="op">=</span> pd.read_csv(filename)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_data(url: <span class="bu">str</span>, filename: <span class="bu">str</span>, force_refresh: <span class="bu">bool</span><span class="op">=</span><span class="va">False</span>, verbose: <span class="bu">bool</span> <span class="op">=</span><span class="va">False</span>, <span class="op">**</span>kwargs) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> verbose: <span class="bu">print</span>(<span class="st">"getting dataset:"</span>, url, <span class="st">"file:"</span>, filename)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> force_refresh <span class="kw">or</span> <span class="kw">not</span> os.path.isfile(filename):</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> get_from_url(url, <span class="st">"_data/"</span><span class="op">+</span>filename, verbose<span class="op">=</span>verbose, <span class="op">**</span>kwargs)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(<span class="st">"_data/"</span> <span class="op">+</span> filename)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co"># ## datasets</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>DATASETS <span class="op">=</span> [</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">"name"</span>: <span class="st">"Gender wage gap"</span>,</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">"url"</span>: <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.WISE.WDP,DSD_HSL@DF_HSL_CWB,1.1/.2_2...._T./all?startPeriod=2010&amp;dimensionAtObservation=AllDimensions&amp;format=csvfile"</span>,</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">"filename"</span>: <span class="st">"gender_wage_gap.csv"</span>,</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"name"</span>: <span class="st">"Productivity levels"</span>,</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>        <span class="st">"url"</span>: <span class="st">"https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_PDB@DF_PDB_LV,1.0/.A.......?startPeriod=2020&amp;dimensionAtObservation=AllDimensions&amp;format=csvfile"</span>,</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">"filename"</span>: <span class="st">"productivity_levels.csv"</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co"># ## Fetch data</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: raw-data-tables</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 1</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>GENDER_WAGE_GAP <span class="op">=</span> (get_data(<span class="op">**</span>DATASETS[<span class="dv">0</span>])</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    .drop(columns<span class="op">=</span>[<span class="st">'DATAFLOW'</span>, <span class="st">'MEASURE'</span>, <span class="st">'AGE'</span>, <span class="st">'SEX'</span>, <span class="st">'DOMAIN'</span>, <span class="st">'UNIT_MULT'</span>, <span class="st">'DECIMALS'</span>])</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    .rename(columns<span class="op">=</span>{<span class="st">'OBS_VALUE'</span>: <span class="st">'GENDER_WAGE_GAP'</span>,</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'UNIT_MEASURE'</span>: <span class="st">'GWG_UNIT'</span>}))</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>PRODUCTIVITY <span class="op">=</span> (get_data(<span class="op">**</span>DATASETS[<span class="dv">1</span>])</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    .drop(columns<span class="op">=</span>[<span class="st">'DATAFLOW'</span>])</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    .rename(columns<span class="op">=</span>{<span class="st">'UNIT_MEASURE'</span>: <span class="st">'PROD_UNIT'</span>,</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'OBS_VALUE'</span>: <span class="st">'PROD_VALUE'</span>,</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'MEASURE'</span>: <span class="st">'PROD_MEASURE'</span>}))</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>display(GENDER_WAGE_GAP[[<span class="st">'TIME_PERIOD'</span>,<span class="st">'REF_AREA'</span>, <span class="st">'GWG_UNIT'</span>, <span class="st">'GENDER_WAGE_GAP'</span>]])</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>display(PRODUCTIVITY[[<span class="st">'TIME_PERIOD'</span>, <span class="st">'REF_AREA'</span>, <span class="st">'PROD_UNIT'</span>, <span class="st">'PROD_VALUE'</span>, <span class="st">'PRICE_BASE'</span>]])</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co"># # Merge the two datasets</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>DATA <span class="op">=</span> GENDER_WAGE_GAP.merge(PRODUCTIVITY,</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>                             how<span class="op">=</span><span class="st">'inner'</span>,</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>                             on<span class="op">=</span>[<span class="st">'TIME_PERIOD'</span>, <span class="st">'REF_AREA'</span>])</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>display(DATA)</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co"># # Data visualisation</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plot-gender-wage-gap-vs-gdppop</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>df_2022 <span class="op">=</span> DATA[</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>    (DATA.TIME_PERIOD <span class="op">==</span> <span class="dv">2022</span>) <span class="op">&amp;</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    (DATA.PROD_MEASURE <span class="op">==</span> <span class="st">'GDPPOP'</span>) <span class="op">&amp;</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    (DATA.PROD_UNIT <span class="op">==</span> <span class="st">'USD_PPP_PS'</span>) <span class="op">&amp;</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>    (DATA.PRICE_BASE <span class="op">==</span> <span class="st">'V'</span>)</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    df_2022,</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"PROD_VALUE"</span>,</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"GENDER_WAGE_GAP"</span>,</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span><span class="st">"REF_AREA"</span>,</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    trendline<span class="op">=</span><span class="st">"ols"</span>,</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Gender wage gap vs. GDP per capita (2022)"</span>,</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>        <span class="st">"GDPPOP"</span>: <span class="st">"gdp per capita (usd ppp)"</span>,</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>        <span class="st">"GENDER_WAGE_GAP"</span>: <span class="st">"gender wage gap (%)"</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">"plotly_white"</span>,</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>fig.update_traces(</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    textposition<span class="op">=</span><span class="st">"top center"</span>,</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">"#209BCF"</span>,</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span><span class="bu">dict</span>(width<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>                          color<span class="op">=</span><span class="st">'white'</span>)),</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">1200</span>,</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">700</span>,</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>    font_color<span class="op">=</span><span class="st">"black"</span>,</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>    title_font_weight<span class="op">=</span><span class="st">"bold"</span>,</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: raw-ordby-gwg</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>display(df_2022[[<span class="st">'REF_AREA'</span>, <span class="st">'GENDER_WAGE_GAP'</span>, <span class="st">'PROD_VALUE'</span>]].sort_values(<span class="st">'GENDER_WAGE_GAP'</span>))</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: raw-gwgvsgdppop-ordby-gdppop</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>display(df_2022[[<span class="st">'REF_AREA'</span>, <span class="st">'GENDER_WAGE_GAP'</span>, <span class="st">'PROD_VALUE'</span>]].sort_values(<span class="st">'PROD_VALUE'</span>))</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="co">#|label: gwg-by-gdphrs</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Split into terciles based on GDP per hour worked</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>df_2022 <span class="op">=</span> DATA[</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>    (DATA.TIME_PERIOD <span class="op">==</span> <span class="dv">2022</span>) <span class="op">&amp;</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>    (DATA.PROD_MEASURE <span class="op">==</span> <span class="st">'GDPHRS'</span>) <span class="op">&amp;</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>    (DATA.PROD_UNIT <span class="op">==</span> <span class="st">'USD_PPP_H'</span>) <span class="op">&amp;</span> </span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>    (DATA.PRICE_BASE <span class="op">==</span> <span class="st">'V'</span>) <span class="op">&amp;</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>    (DATA.REF_AREA <span class="op">!=</span> <span class="st">'OECD'</span>)</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>    ].copy()</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>df_2022[<span class="st">'Tier'</span>] <span class="op">=</span> pd.qcut(df_2022[<span class="st">'PROD_VALUE'</span>], q<span class="op">=</span><span class="dv">3</span>, labels<span class="op">=</span>[<span class="st">'Lower-Third'</span>, <span class="st">'Middle-Third'</span>, <span class="st">'Top-Third'</span>])</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> {<span class="st">'Lower-Third'</span>: <span class="st">'#F0AD4E'</span>, <span class="st">'Middle-Third'</span>: <span class="st">'#209BCF'</span>, <span class="st">'Top-Third'</span>: <span class="st">'#4ABF73'</span>}</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>tier_order <span class="op">=</span> [<span class="st">'Lower-Third'</span>, <span class="st">'Middle-Third'</span>, <span class="st">'Top-Third'</span>]</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">11</span>, <span class="dv">7</span>))</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>fig.patch.set_facecolor(<span class="st">'#F8F8F8'</span>)</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>ax.set_facecolor(<span class="st">'#F8F8F8'</span>)</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>fig.patch.set_facecolor(<span class="st">'white'</span>)</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>ax.set_facecolor(<span class="st">'white'</span>)</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, tier <span class="kw">in</span> <span class="bu">enumerate</span>(tier_order):</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>    subset <span class="op">=</span> df_2022[df_2022[<span class="st">'Tier'</span>] <span class="op">==</span> tier][<span class="st">'GENDER_WAGE_GAP'</span>]</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    ax.boxplot(subset, positions<span class="op">=</span>[positions[i]], widths<span class="op">=</span><span class="fl">0.45</span>,</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>               patch_artist<span class="op">=</span><span class="va">True</span>, showfliers<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>               medianprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>),</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>               whiskerprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span>colors[tier], linewidth<span class="op">=</span><span class="fl">1.5</span>),</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>               capprops<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span>colors[tier], linewidth<span class="op">=</span><span class="fl">1.5</span>),</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>               boxprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span>colors[tier], alpha<span class="op">=</span><span class="fl">0.4</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, edgecolor<span class="op">=</span>colors[tier]))</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>    np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>    jitter <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="fl">0.12</span>, <span class="fl">0.12</span>, size<span class="op">=</span><span class="bu">len</span>(subset))</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>    ax.scatter(positions[i] <span class="op">+</span> jitter, subset, color<span class="op">=</span>colors[tier],</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>               s<span class="op">=</span><span class="dv">60</span>, alpha<span class="op">=</span><span class="fl">0.85</span>, zorder<span class="op">=</span><span class="dv">5</span>, edgecolors<span class="op">=</span><span class="st">'white'</span>, linewidths<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>    tier_df <span class="op">=</span> df_2022[df_2022[<span class="st">'Tier'</span>] <span class="op">==</span> tier]</span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, row <span class="kw">in</span> tier_df.iterrows():</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> row[<span class="st">'REF_AREA'</span>] <span class="kw">in</span> [<span class="st">'KOR'</span>, <span class="st">'BGR'</span>, <span class="st">'LUX'</span>, <span class="st">'EST'</span>, <span class="st">'JPN'</span>, <span class="st">'IRL'</span>, <span class="st">'NOR'</span>, <span class="st">'MEX'</span>, <span class="st">'FIN'</span>, <span class="st">'USA'</span>]:</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>            ax.annotate(row[<span class="st">'REF_AREA'</span>], (positions[i], row[<span class="st">'GENDER_WAGE_GAP'</span>]),</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>                       textcoords<span class="op">=</span><span class="st">"offset points"</span>, xytext<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">2</span>),</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>                       fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'#333333'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(positions)</span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([<span class="st">'Lower-Third</span><span class="ch">\n</span><span class="st">Productivity'</span>, <span class="st">'Middle-Third</span><span class="ch">\n</span><span class="st">Productivity'</span>, <span class="st">'Top-Third</span><span class="ch">\n</span><span class="st">Productivity'</span>],</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>                   fontsize<span class="op">=</span><span class="dv">11</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Gender Wage Gap (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Distribution of Gender Wage Gap by Productivity Tier (2022)'</span>,</span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, pad<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>ax.grid(axis<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, linestyle<span class="op">=</span><span class="st">':'</span>)</span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="fl">0.4</span>, <span class="fl">3.6</span>)</span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="co">#patches = [mpatches.Patch(facecolor=colors[t], alpha=0.6, edgecolor=colors[t], label=t) for t in tier_order]</span></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.legend(handles=patches, loc='upper right', fontsize=9, framealpha=0.7)</span></span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.tight_layout()</span></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></div></div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
