@@ -5,6 +5,7 @@ project:
 format:
   html:
     theme: lux
+    css: style.css
   ipynb:
     ipynb-ouput: all  # compute all cells when rendering a notebook
 
