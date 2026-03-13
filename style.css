@@ -1,3 +1,20 @@
+/* ┏━╸┏━┓┏┳┓┏━┓┏━┓┏━╸╺┳╸   ╺┳╸┏━┓┏┓ ╻  ┏━╸┏━┓ */
+/* ┃  ┃ ┃┃┃┃┣━┛┣━┫┃   ┃     ┃ ┣━┫┣┻┓┃  ┣╸ ┗━┓ */
+/* ┗━╸┗━┛╹ ╹╹  ╹ ╹┗━╸ ╹     ╹ ╹ ╹┗━┛┗━╸┗━╸┗━┛ */
+/* embed from ipynb inside html documents */
 .table-sm td, .table-sm th {
     padding: 0pt 5pt;
 }
+/* revealjs tables */
+.reveal table td,
+.reveal table th {
+    padding: 0pt 5pt;
+}
+
+
+/* gap between figures that are on the same column
+ * usefull so two tables are not displayed as one*/
+.quarto-layout-row {
+    gap: 2em;
+}
+
