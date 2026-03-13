@@ -23,3 +23,8 @@ Economic development linked to a reduction of gender inequities ?
 {{< embed report.ipynb#plot-gender-wage-gap-vs-gdppop >}}
 :::
 
+---
+
+::: {.r-stretch}
+{{< embed report.ipynb#gwg-by-gdphrs >}}
+:::
