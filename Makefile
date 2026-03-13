@@ -12,3 +12,5 @@ report: report.py
 
 presentation:
 	quarto render presentation.qmd
+	echo "\007"  # ring bell at end of rendering
+
