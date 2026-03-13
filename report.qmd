@@ -7,6 +7,7 @@ toc: true
 format:
   html:
     output-file: report.html
+    code-fold: true
 
 
 notebook-links: global # global: show with toc, inline: show with code
@@ -68,8 +69,11 @@ pip3 install -r requirements.txt
 ## The code
 You can reproduce graphics from this report using this code
 
+::: {.callout-note appearance="minimal" collapse=true}
+### Python code (as a single file)
+
 ```python
 {{< include report.py >}}
 ```
-
+:::
 
