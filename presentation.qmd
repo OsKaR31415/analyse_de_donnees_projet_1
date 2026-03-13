@@ -1,0 +1,25 @@
+---
+title: "Economic development and gender inequities"
+
+format:
+  revealjs:
+    incremental: true
+    center: true
+    transition: slide
+---
+
+# Intuition :
+
+Economic development linked to a reduction of gender inequities ?
+
+# Data we used
+
+ - Economic productivity : GDP per hours worked (using purchasing power parity)
+ - Gender inequities : Gender wage gap (difference between median wages, as a percentage of male median wages)
+
+---
+
+::: {.r-stretch}
+{{< embed report.ipynb#plot-gender-wage-gap-vs-gdppop >}}
+:::
+
