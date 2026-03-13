@@ -6,7 +6,11 @@
 <script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="presentation_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="presentation_files/libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="presentation_files/libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="presentation_files/libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <title>Economic development and gender inequities</title>
@@ -29,6 +33,7 @@
     }
   </style>
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="style.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -161,14 +166,19 @@ Yousra Tersi
 </section>
 <section id="intuition" class="title-slide slide level1 center">
 <h1>Intuition :</h1>
-<p>Economic development linked to a reduction of gender inequities ?</p>
+<p>Economic development linked to a reduction of gender wage inequities ?</p>
 </section>
 
+<section>
 <section id="data-we-used" class="title-slide slide level1 center">
 <h1>Data we used</h1>
+
+</section>
+<section id="units" class="slide level2 center">
+<h2>Units</h2>
 <ul>
 <li class="fragment">Economic productivity : GDP / hours worked (using PPP)</li>
-<li class="fragment">Gender inequities : Gender wage gap (% of male median wages)</li>
+<li class="fragment">Gender wage inequities : Gender wage gap (% of male median wages)</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -187,7 +197,243 @@ Yousra Tersi
           display:block!important;
       }</style></aside>
 </section>
+<section id="section" class="slide level2 scrollable center" style="font-size: 15px">
+<h2></h2>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/oscarplaisant/devoirs/projets/M1_LOGOS/analyse_exploratoire_donnees/projet_1/report.ipynb" data-notebook-title="report code" data-notebook-cellid="cell-raw-data-tables">
+<div id="raw-data-tables" class="cell quarto-layout-panel" data-layout-ncol="2" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-execution_count="4" data-tags="[]">
+<div class="quarto-layout-row">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TIME_PERIOD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">REF_AREA</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">GWG_UNIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">GENDER_WAGE_GAP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">0</th>
+<td style="text-align: left;">2010</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">14.042934</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">1</th>
+<td style="text-align: left;">2011</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">15.966387</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">2</th>
+<td style="text-align: left;">2012</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">13.750000</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">3</th>
+<td style="text-align: left;">2013</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">18.000000</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4</th>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">15.773354</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">...</th>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">449</th>
+<td style="text-align: left;">2018</td>
+<td style="text-align: left;">ROU</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">3.496503</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">450</th>
+<td style="text-align: left;">2019</td>
+<td style="text-align: left;">ROU</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">5.855397</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">451</th>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">ROU</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">3.304181</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">452</th>
+<td style="text-align: left;">2021</td>
+<td style="text-align: left;">ROU</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">5.755499</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">453</th>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">ROU</td>
+<td style="text-align: left;">PT_WG_SAL_M_D</td>
+<td style="text-align: left;">13.636025</td>
+</tr>
+</tbody>
+</table>
+
+<p>454 rows × 4 columns</p>
+</div>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TIME_PERIOD</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">REF_AREA</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">PROD_UNIT</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">PROD_VALUE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">PRICE_BASE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">0</th>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">XDC_PS</td>
+<td style="text-align: left;">81320.980638</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">1</th>
+<td style="text-align: left;">2021</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">XDC_PS</td>
+<td style="text-align: left;">90725.778508</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">2</th>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">AUS</td>
+<td style="text-align: left;">XDC_PS</td>
+<td style="text-align: left;">98695.841484</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">3</th>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">AUT</td>
+<td style="text-align: left;">XDC_PS</td>
+<td style="text-align: left;">42651.619379</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4</th>
+<td style="text-align: left;">2021</td>
+<td style="text-align: left;">AUT</td>
+<td style="text-align: left;">XDC_PS</td>
+<td style="text-align: left;">45381.243743</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">...</th>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4160</th>
+<td style="text-align: left;">2022</td>
+<td style="text-align: left;">ZAF</td>
+<td style="text-align: left;">PS</td>
+<td style="text-align: left;">15543.990000</td>
+<td style="text-align: left;">_Z</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4161</th>
+<td style="text-align: left;">2023</td>
+<td style="text-align: left;">ZAF</td>
+<td style="text-align: left;">PS</td>
+<td style="text-align: left;">16497.690000</td>
+<td style="text-align: left;">_Z</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4162</th>
+<td style="text-align: left;">2023</td>
+<td style="text-align: left;">ZAF</td>
+<td style="text-align: left;">XDC_PS</td>
+<td style="text-align: left;">425756.239571</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4163</th>
+<td style="text-align: left;">2023</td>
+<td style="text-align: left;">ZAF</td>
+<td style="text-align: left;">USD_PPP_PS</td>
+<td style="text-align: left;">58217.941603</td>
+<td style="text-align: left;">V</td>
+</tr>
+<tr class="odd">
+<th style="text-align: left;" data-quarto-table-cell-role="th">4164</th>
+<td style="text-align: left;">2023</td>
+<td style="text-align: left;">ZAF</td>
+<td style="text-align: left;">USD_PPP_PS</td>
+<td style="text-align: left;">50100.604145</td>
+<td style="text-align: left;">Q</td>
+</tr>
+</tbody>
+</table>
+
+<p>4165 rows × 5 columns</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="results" class="title-slide slide level1 center">
 <h1>Results</h1>
@@ -198,7 +444,7 @@ Yousra Tersi
 <div class="columns">
 <div class="column" style="width:80%;">
 <div class="quarto-embed-nb-cell" data-notebook="/Users/oscarplaisant/devoirs/projets/M1_LOGOS/analyse_exploratoire_donnees/projet_1/report.ipynb" data-notebook-title="report code" data-notebook-cellid="cell-plot-gender-wage-gap-vs-gdppop">
-<div id="cell-plot-gender-wage-gap-vs-gdppop" class="cell" data-execution_count="24">
+<div id="cell-plot-gender-wage-gap-vs-gdppop" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -248,7 +494,7 @@ Yousra Tersi
 <div class="columns">
 <div class="column" style="width:80%;">
 <div class="quarto-embed-nb-cell" data-notebook="/Users/oscarplaisant/devoirs/projets/M1_LOGOS/analyse_exploratoire_donnees/projet_1/report.ipynb" data-notebook-title="report code" data-notebook-cellid="cell-gwg-by-gdphrs">
-<div id="cell-gwg-by-gdphrs" class="cell" data-execution_count="12">
+<div id="cell-gwg-by-gdphrs" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -270,7 +516,7 @@ Yousra Tersi
 </div>
 </div></div>
 <aside class="notes">
-<p>About the data : tiers are 3-quantiles (each tier has the same amount of country)</p>
+<p>About the data : thirds are 3-quantiles (each tier has the same amount of country)</p>
 <ul>
 <li>variance comes from the lower-third :
 <ul>
@@ -281,6 +527,11 @@ Yousra Tersi
 <ul>
 <li>the only one with negative gender gap (i.e.&nbsp;whomen are paid more than men on median)</li>
 <li>we can see that it’s outlying because it’s beyond the “minimum box”</li>
+</ul></li>
+<li>top third :
+<ul>
+<li>lower wage gap (9% VS 11.7% for the lower third)</li>
+<li>tighter distribution</li>
 </ul></li>
 </ul>
 <style type="text/css">
@@ -294,8 +545,76 @@ Yousra Tersi
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-
 </section></section>
+<section id="conclusions" class="title-slide slide level1 center">
+<h1>Conclusions</h1>
+<ul>
+<li class="fragment">highest productivity tier :
+<ul>
+<li class="fragment">lower median gap</li>
+<li class="fragment">less extreme outliers</li>
+<li class="fragment">not enough to guarantee equal pay
+<ul>
+<li class="fragment">still large (&gt;20%) gaps in some countries (JPN, ISR)</li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="new-questions" class="title-slide slide level1 center">
+<h1>New questions</h1>
+<ul>
+<li class="fragment">Is the wage gap really reflecting a gendered difference ?
+<ul>
+<li class="fragment">national “wage ceiling” that restricts disparities :<br> flat wage distributions <span class="math inline">\(\longrightarrow\)</span> no high-paying jobs</li>
+</ul></li>
+<li class="fragment">Why the variance in low-productivity countries ?</li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>Is the wage gap reflecting a true difference in the treatment of women and men in the workplace, or is it simply that neither gender has access to high-paying jobs, making the wage distribution so flat that everyone makes the same amount of money regardless of gender? Does reaching the highest echelon of national productivity serve as a systemic “ceiling” that naturally restricts extreme wage disparities?</p></li>
+<li><p>Is the wide variance in the lower-third reflecting the chaotic transition periods of developing economies, while the tightly clustered middle and top tiers imply that advanced economies have adopted similar, standardized labor policies?</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -352,7 +671,7 @@ Yousra Tersi
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

@@ -3,27 +3,44 @@ title: "Economic development and gender inequities"
 
 format:
   revealjs:
-    smaller: false
     incremental: true
+  
     center: true
     transition: slide
-    # slide-level: 1
+    slide-level: 2
+  
     menu: true
+    slide-number: true
+  
+    filters:
+      - reveal-header
+    sc-sb-title: true  # keep the current section at top left corner
+    #footer: '<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: inherit">CC BY-NC 4.0</a>'  # display license
+  
 ---
 
 # Intuition :
 
-Economic development linked to a reduction of gender inequities ?
+Economic development linked to a reduction of gender wage inequities ?
 
 # Data we used
 
+## Units
+
  - Economic productivity : GDP / hours worked  (using PPP)
- - Gender inequities : Gender wage gap (% of male median wages)
+ - Gender wage inequities : Gender wage gap (% of male median wages)
 
 :::{.notes}
  - Economic productivity : GDP per hours worked (using purchasing power parity)
  - Gender inequities : Gender wage gap (difference between median wages, as a percentage of male median wages)
 :::
+
+---
+
+## {.scrollable style="font-size: 15px"}
+
+{{< embed report.ipynb#raw-data-tables >}}
+
 
 # Results
 
@@ -77,7 +94,7 @@ Economic development linked to a reduction of gender inequities ?
 
 
 :::{.notes}
-About the data : tiers are 3-quantiles (each tier has the same amount of country)
+About the data : thirds are 3-quantiles (each tier has the same amount of country)
 
  - variance comes from the lower-third :
      - contains both the high-gap south KORea
@@ -86,7 +103,38 @@ About the data : tiers are 3-quantiles (each tier has the same amount of country
  - still outlying : LUXembourg
      - the only one with negative gender gap (i.e. whomen are paid more than men on median)
      - we can see that it's outlying because it's beyond the "minimum box"
+
+ - top third :
+     - lower wage gap (9% VS 11.7% for the lower third)
+     - tighter distribution
 :::
+
+# Conclusions
+
+ - highest productivity tier :
+     - lower median gap
+     - less extreme outliers
+     - not enough to guarantee equal pay
+         - still large (>20%) gaps in some countries (JPN, ISR)
+
+
+:::{.notes}
+
+:::
+
+# New questions
+
+ - Is the wage gap really reflecting a gendered difference ?
+     - national "wage ceiling" that restricts disparities :<br/> flat wage distributions $\longrightarrow$ no high-paying jobs
+ - Why the variance in low-productivity countries ?
+
+:::{.notes}
+ - Is the wage gap reflecting a true difference in the treatment of women and men in the workplace, or is it simply that neither gender has access to high-paying jobs, making the wage distribution so flat that everyone makes the same amount of money regardless of gender? Does reaching the highest echelon of national productivity serve as a systemic “ceiling” that naturally restricts extreme wage disparities?
+
+ - Is the wide variance in the lower-third reflecting the chaotic transition periods of developing economies, while the tightly clustered middle and top tiers imply that advanced economies have adopted similar, standardized labor policies?
+:::
+
+
 
 
 
