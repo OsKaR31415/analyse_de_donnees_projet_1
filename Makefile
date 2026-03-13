@@ -1,5 +1,5 @@
 
-all: report report.ipynb
+all: report presentation
 
 .PHONY: report.py
 
@@ -10,4 +10,5 @@ report: report.py
 	quarto render report.qmd
 	echo "\007"  # ring bell at end of rendering
 
-
+presentation:
+	quarto render presentation.qmd
