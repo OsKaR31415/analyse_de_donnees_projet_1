@@ -3,9 +3,12 @@ title: "Economic development and gender inequities"
 
 format:
   revealjs:
+    smaller: false
     incremental: true
     center: true
     transition: slide
+    # slide-level: 1
+    menu: true
 ---
 
 # Intuition :
@@ -14,17 +17,76 @@ Economic development linked to a reduction of gender inequities ?
 
 # Data we used
 
+ - Economic productivity : GDP / hours worked  (using PPP)
+ - Gender inequities : Gender wage gap (% of male median wages)
+
+:::{.notes}
  - Economic productivity : GDP per hours worked (using purchasing power parity)
  - Gender inequities : Gender wage gap (difference between median wages, as a percentage of male median wages)
+:::
+
+# Results
 
 ---
 
-::: {.r-stretch}
+:::{.columns}
+
+:::{.column width="80%"}
 {{< embed report.ipynb#plot-gender-wage-gap-vs-gdppop >}}
 :::
 
+:::{.column width="20%"}
+:::{.r-fit-text style="margin-left: -70pt; transform: translateY(50%)"}
+ - no linear correlation
+ - extreme cases :
+     - KOR
+     - BEL
+ - outlier : LUX
+:::
+:::
+
+:::
+
+:::{.notes}
+ - South Korea (KOR) :
+     - high productivity (\$53 USD PPP/hour)
+     - BUT largest gap : over 31%
+ - high-productivity European (like BELgium) : gaps that range just under 1%.
+
+ - outlier : LUXembourg
+:::
+
 ---
 
-::: {.r-stretch}
+
+:::{.columns}
+
+:::{.column width="80%"}
 {{< embed report.ipynb#gwg-by-gdphrs >}}
 :::
+
+:::{.column width="20%"}
+:::{.r-fit-text style="margin-left: -20pt; transform: translateY(50%)"}
+ - variance comes from lower-third
+     - KOR vs BGR
+ - still outlying : LUX
+:::
+:::
+
+:::
+
+
+:::{.notes}
+About the data : tiers are 3-quantiles (each tier has the same amount of country)
+
+ - variance comes from the lower-third :
+     - contains both the high-gap south KORea
+     - AND near-perfect parity countries like BulGaRia
+
+ - still outlying : LUXembourg
+     - the only one with negative gender gap (i.e. whomen are paid more than men on median)
+     - we can see that it's outlying because it's beyond the "minimum box"
+:::
+
+
+
