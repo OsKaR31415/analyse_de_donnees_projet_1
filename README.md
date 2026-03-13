@@ -3,7 +3,7 @@
 
 # Structure du projet
 
-Pour générer le fichier html contenant le rapport, lancer `quarto render report.qmd` ou simplement `make report`
+Pour générer le fichier html contenant le rapport, lancer `make`
 
  - `report.qmd` contient le texte du rapport et sa structure
  - `report.ipynb` est un notebook contenant le code du projet
