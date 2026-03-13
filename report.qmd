@@ -1,17 +1,5 @@
 ---
 title: "Report"
-authors:
-  - name: "Oscar Plaisant"
-    note: "22500288"
-    url: "https://osk42.quarto.pub"
-    email: "oscar.plaisant@etu.u-paris.fr"
-  - name: "Anthony Saab"
-    note: "22525585"
-    url: "https://sites.google.com/view/saabism/portfolio"
-    email: "anthony.saab@etu.u-paris.fr"
-  - name: "Yousra Tersi"
-    note: "22513160"
-    email: "yousra.tersi@etu.u-paris.fr"
 
 date: 2026-03-07
 toc: true
